@@ -60,8 +60,8 @@ all: main-build
 main-build: Borrador-Proyecto.elf secondary-outputs
 
 # Tool invocations
-Borrador-Proyecto.elf Borrador-Proyecto.map: $(OBJS) $(USER_OBJS) /home/e420-00/GitHub/ProjectEtherea/Borrador-Proyecto/STM32F411RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Borrador-Proyecto.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/e420-00/GitHub/ProjectEtherea/Borrador-Proyecto/STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Borrador-Proyecto.map" -Wl,--gc-sections -static -L"/home/e420-00/GitHub/ProjectEtherea/PeripheralDrivers/Debug" -L"/home/e420-00/GitHub/ProjectEtherea/CMSIS-Full/Debug" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Borrador-Proyecto.elf Borrador-Proyecto.map: $(OBJS) $(USER_OBJS) /home/miguel/GIthub/ProjectEtherea/Borrador-Proyecto/STM32F411RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Borrador-Proyecto.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/miguel/GIthub/ProjectEtherea/Borrador-Proyecto/STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Borrador-Proyecto.map" -Wl,--gc-sections -static -L"/home/miguel/GIthub/ProjectEtherea/PeripheralDrivers/Debug" -L"/home/miguel/GIthub/ProjectEtherea/CMSIS-Full/Debug" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

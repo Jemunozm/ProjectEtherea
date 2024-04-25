@@ -15,8 +15,8 @@ C_DEPS += \
 
 
 # Each subdirectory must supply rules for building sources it contributes
-App/Src/%.o App/Src/%.su: ../App/Src/%.c App/Src/subdir.mk
-	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F411RE -DSTM32 -DSTM32F4 -DSTM32F411RETx -DSTM32F411xE -c -I"/home/e420-00/STM32CubeIDE/workspaceyoUN/Borrador-Proyecto/App/Inc" -I"/home/e420-00/STM32CubeIDE/workspaceyoUN/Borrador-Proyecto/Core/Include" -I"/home/e420-00/STM32CubeIDE/workspaceyoUN/Borrador-Proyecto/Core/Device/ST/STM32F4xx/Include" -I"/home/e420-00/STM32CubeIDE/workspaceyoUN/CMSIS-repo/STM32Cube_FW_F4_V1.27.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/e420-00/STM32CubeIDE/workspaceyoUN/CMSIS-repo/STM32Cube_FW_F4_V1.27.0/Drivers/CMSIS/Include" -I"/home/e420-00/GitHub/ProjectEtherea/PeripheralDrivers/Inc" -I"/home/e420-00/GitHub/ProjectEtherea/CMSIS-Full/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
+App/Src/main.o: ../App/Src/main.c App/Src/subdir.mk
+	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F411RE -DSTM32 -DSTM32F4 -DSTM32F411RETx -DSTM32F411xE -c -I"/home/miguel/Universidad/workspace_Satelite/CMSIS-repo/STM32Cube_FW_F4_V1.27.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/miguel/Universidad/workspace_Satelite/CMSIS-repo/STM32Cube_FW_F4_V1.27.0/Drivers/CMSIS/Include" -I"/home/miguel/GIthub/ProjectEtherea/PeripheralDrivers/Inc" -I"/home/miguel/GIthub/ProjectEtherea/CMSIS-Full/Inc" -I"/home/miguel/GIthub/ProjectEtherea/Borrador-Proyecto/Core/Include" -I"/home/miguel/GIthub/ProjectEtherea/Borrador-Proyecto/Core/Device/ST/STM32F4xx/Include" -I"/home/miguel/GIthub/ProjectEtherea/Borrador-Proyecto/App/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
 
 clean: clean-App-2f-Src
 
